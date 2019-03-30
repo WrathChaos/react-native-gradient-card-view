@@ -9,7 +9,7 @@ Fully customizable Gradient Card View for React Native.
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 <p align="center">
-<img alt="React Native Gradient Card View" src="https://github.com/WrathChaos/react-native-gradient-card-view/blob/master/assets/Screenshots/inspiration.png" width="49.7%"/>
+<img alt="React Native Gradient Card View" src="https://github.com/WrathChaos/react-native-gradient-card-view/blob/master/assets/Screenshots/example.png" width="49.7%"/>
 </p>
 
 
