@@ -1,6 +1,6 @@
 {
   "name": "react-native-gradient-card-view",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "Fully customizable Gradient Card View for React Native.",
   "keywords": [
     "gradient",
