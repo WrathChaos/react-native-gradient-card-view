@@ -11,7 +11,9 @@
     "react": "16.8.3",
     "react-native": "0.59.2",
     "react-native-fast-image": "^5.2.0",
-    "react-native-linear-gradient": "^2.5.4"
+    "react-native-linear-gradient": "^2.5.4",
+    "react-native-svg": "^9.3.6",
+    "react-native-svg-charts": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

@@ -29,14 +29,12 @@ const GradientCard = props => {
     imageSource,
     borderRadius,
     subtitleStyle,
-    leftComponent,
     centerSubtitle,
     outerContainer,
     innerContainer,
     gradientColors,
     imageComponent,
     rightComponent,
-    centerComponent,
     imageResizeMode,
     centerTitleStyle,
     imageBorderRadius,
@@ -63,21 +61,21 @@ const GradientCard = props => {
             />
           )}
           <View style={styles.column}>
-            {leftComponent || <Text style={titleStyle || styles.titleStyle}>
+            <Text style={titleStyle || styles.titleStyle}>
               {title || "BCT"}
             </Text>
             <Text style={subtitleStyle || styles.subtitleStyle}>
               {subtitle || "Bitcoin"}
-            </Text>}
+            </Text>
           </View>
 
           <View style={[styles.column, styles.centerTextContainer]}>
-           {centerComponent ||  <Text style={centerTitleStyle || styles.centerTitleStyle}>
+            <Text style={centerTitleStyle || styles.centerTitleStyle}>
               {centerTitle || "$ 4081,95"}
             </Text>
             <Text style={centerSubtitleStyle || styles.centerSubtitleStyle}>
               {centerSubtitle || "+ 1,48 ↑"}
-            </Text>}
+            </Text>
           </View>
           <View style={[styles.column, styles.rightContainer]}>
             {rightComponent || null}
