@@ -26,9 +26,7 @@ npm i react-native-gradient-card-view
 
 ### Expo Version:
 
-```ruby
-npm i react-native-gradient-card-view
-```
+Coming soon!
 
 
 ## Peer Dependencies
