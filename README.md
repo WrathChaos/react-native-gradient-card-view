@@ -90,6 +90,7 @@ You can check the example for the advanced usage
 | gradientColors      |  [color]   |      check the example       | change the gradient's color array                          |
 | style               |   style    |             null             | add any style to the whole container                       |
 | shadowStyle         |   style    |      check the example       | set your own shadow style                                  |
+| shadowColor         |   color    |           #595959            | change the shadow color                                    |
 | outerContainer      |   style    |            style             | set your own outer container style (NOT recommended!)      |
 | height              |   number   |              70              | change the card's height                                   |
 | width               |   number   |     device width * 0.95      | change the card's width                                    |
