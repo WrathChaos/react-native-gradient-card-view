@@ -115,6 +115,13 @@ You can check the example for the advanced usage
 | centerComponent     | component  |     text based component     | set your component for the center part                     |
 | rightComponent      | component  |             null             | set your own component for the right component             |
 
+### ToDos
+
+- [ ] Make an Expo Version
+- [ ] LICENSE
+- [ ] Write an article about the lib on Medium
+
+
 ## Author
 
 FreakyCoder, kurayogun@gmail.com
