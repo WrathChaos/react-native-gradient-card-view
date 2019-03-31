@@ -117,7 +117,7 @@ You can check the example for the advanced usage
 ### ToDos
 
 - [ ] Make an Expo Version
-- [ ] LICENSE
+- [x] LICENSE
 - [ ] Write an article about the lib on Medium
 
 
