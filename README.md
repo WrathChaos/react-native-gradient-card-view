@@ -26,7 +26,9 @@ npm i react-native-gradient-card-view
 
 ### Expo Version:
 
-Coming soon!
+```ruby
+"react-native-gradient-card-view": "WrathChaos/react-native-gradient-card-view#expo"
+```
 
 
 ## Peer Dependencies
@@ -40,6 +42,16 @@ Coming soon!
 "react-native-fast-image": ">= 5.x.x",
 "react-native-linear-gradient": ">= 2.x.x"
 ```
+
+#Expo Version Peer Dependencies: 
+
+```
+"expo": ">= 32.x.x",
+"react": ">= 16.x.x",
+"react-native": ">= 0.55.x",
+"react-native-expo-image-cache": ">= 3.x.x"
+```
+
 
 ## Basic Usage
 
