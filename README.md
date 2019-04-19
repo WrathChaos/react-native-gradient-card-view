@@ -4,6 +4,7 @@ Fully customizable Gradient Card View for React Native.
 
 [![npm version](https://img.shields.io/npm/v/react-native-gradient-card-view.svg)](https://www.npmjs.com/package/react-native-gradient-card-view)
 [![npm](https://img.shields.io/npm/dt/react-native-gradient-card-view.svg)](https://www.npmjs.com/package/react-native-gradient-card-view)
+![expo-compatible](https://img.shields.io/badge/Expo-compatible-blueviolet.svg)
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
