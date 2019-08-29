@@ -11,6 +11,7 @@
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-fast-image": "^7.0.2",
+    "react-native-gradient-card-view": "0.1.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-svg": "^9.7.1",
     "react-native-svg-charts": "^5.3.0"
