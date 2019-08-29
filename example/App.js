@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { FlatList, SafeAreaView, View } from "react-native";
-import GradientCard from "react-native-gradient-card-view";
+import React, { Fragment } from "react";
+import { SafeAreaView, View, FlatList, StatusBar } from "react-native";
+// import GradientCard from "react-native-gradient-card-view";
+import GradientCard from "./lib/src/components/GradientCard";
 import { LineChart } from "react-native-svg-charts";
 
 const listData = [
@@ -52,10 +53,11 @@ const listData = [
   }
 ];
 
-export default class App extends Component {
-  renderItem(item) {
+const App = () => {
+  function renderItem(item) {
     return (
       <GradientCard
+        key={item.name}
         style={{ marginTop: 16 }}
         title={item.name}
         subtitle={item.shortName}
@@ -83,22 +85,22 @@ export default class App extends Component {
       />
     );
   }
-
-  render() {
-    return (
+  return (
+    <Fragment>
+      <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{ flex: 1, backgroundColor: "#F5FCFF" }}>
         <View style={styles.container}>
           <View style={{ top: 24 }}>
             <FlatList
               data={listData}
-              renderItem={({ item }) => this.renderItem(item)}
+              renderItem={({ item }) => renderItem(item)}
             />
           </View>
         </View>
       </SafeAreaView>
-    );
-  }
-}
+    </Fragment>
+  );
+};
 
 const styles = {
   container: {
@@ -126,3 +128,5 @@ const styles = {
     bottom: 30
   }
 };
+
+export default App;
