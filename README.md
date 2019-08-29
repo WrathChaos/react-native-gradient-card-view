@@ -11,7 +11,6 @@
 ![expo-compatible](https://img.shields.io/badge/Expo-compatible-9cf.svg?style=for-the-badge)
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 
 <p align="center">
 <img alt="React Native Gradient Card View" src="https://github.com/WrathChaos/react-native-gradient-card-view/blob/master/assets/Screenshots/example.png" width="49.7%"/>
