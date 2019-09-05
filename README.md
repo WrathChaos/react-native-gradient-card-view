@@ -10,7 +10,7 @@
 [![npm](https://img.shields.io/npm/dt/react-native-gradient-card-view.svg?style=for-the-badge)](https://www.npmjs.com/package/react-native-gradient-card-view)
 ![expo-compatible](https://img.shields.io/badge/Expo-compatible-9cf.svg?style=for-the-badge)
 ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=for-the-badge)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/WrathChaos/react-native-gradient-card-view.svg)](https://greenkeeper.io/)
 
 <p align="center">
 <img alt="React Native Gradient Card View" src="https://github.com/WrathChaos/react-native-gradient-card-view/blob/master/assets/Screenshots/example.png" width="49.7%"/>
