@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { SafeAreaView, View, FlatList, StatusBar } from "react-native";
-import GradientCard from "react-native-gradient-card-view";
+// import GradientCard from "react-native-gradient-card-view";
+import GradientCard from "./build/dist/GradientCard";
 import { LineChart } from "react-native-svg-charts";
 
 const listData = [

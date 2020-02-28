@@ -9,7 +9,7 @@ import styles, {
 import LinearGradient from "react-native-linear-gradient";
 
 const { width } = Dimensions.get("window");
-const defaultImageSource = require("../local-assets/Bitcoin.png");
+const defaultImageSource = require("./local-assets/Bitcoin.png");
 
 const GradientCard = props => {
   const {
