@@ -1,25 +1,35 @@
-import { Dimensions, Platform } from "react-native";
+import {
+  Platform,
+  ViewStyle,
+  TextStyle,
+  StyleSheet,
+  Dimensions
+} from "react-native";
 
 const { width } = Dimensions.get("window");
-const deviceWidth = width;
 
-export const _gradientColors = [
-  "rgba(85,96,127,1.0)",
-  "rgba(68, 79, 112, 1.0)",
-  "rgba(48, 58, 87,1.0)"
-];
+interface Style {
+  column: ViewStyle;
+  titleStyle: TextStyle;
+  subtitleStyle: TextStyle;
+  innerContainer: ViewStyle;
+  rightContainer: ViewStyle;
+  centerTitleStyle: TextStyle;
+  centerTextContainer: ViewStyle;
+  centerSubtitleStyle: TextStyle;
+}
 
 export function _shadowStyle(shadowColor) {
   return {
     ...Platform.select({
       ios: {
-        shadowColor: shadowColor || "#595959",
+        shadowColor,
+        shadowRadius: 5,
+        shadowOpacity: 0.5,
         shadowOffset: {
           width: 1,
           height: 3
-        },
-        shadowRadius: 5,
-        shadowOpacity: 0.5
+        }
       },
       android: {
         elevation: 3
@@ -30,21 +40,21 @@ export function _shadowStyle(shadowColor) {
 
 export function _outerContainer(height, width, borderRadius) {
   return {
-    height: height || 70,
-    borderRadius: borderRadius || 20,
-    width: width || deviceWidth * 0.95
+    width,
+    height,
+    borderRadius
   };
 }
 
-export function _imageStyle(imageWidth, imageHeight, imageBorderRadius) {
+export function _imageStyle(width, height, borderRadius) {
   return {
-    width: imageWidth || 35,
-    height: imageHeight || 35,
-    borderRadius: imageBorderRadius || 10
+    width,
+    height,
+    borderRadius
   };
 }
 
-export default {
+export default StyleSheet.create<Style>({
   innerContainer: {
     flex: 1,
     marginLeft: 16,
@@ -85,4 +95,4 @@ export default {
     color: "rgba(163, 224, 97, 1.0)"
   },
   rightContainer: { left: 40 }
-};
+});
