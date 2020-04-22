@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-gradient-card-view": "^0.1.0",
+    "react-native-gradient-card-view": "0.2.0",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-svg": "^11.0.1",
     "react-native-svg-charts": "^5.3.0"

@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
 import { SafeAreaView, View, FlatList, StatusBar } from "react-native";
-// import GradientCard from "react-native-gradient-card-view";
-import GradientCard from "./build/dist/GradientCard";
 import { LineChart } from "react-native-svg-charts";
+import GradientCard from "react-native-gradient-card-view";
 
 const listData = [
   {
@@ -25,8 +24,8 @@ const listData = [
       Math.random() * 10,
       Math.random() * 10,
       Math.random() * 10,
-      Math.random() * 10
-    ]
+      Math.random() * 10,
+    ],
   },
   {
     name: "Ethereum",
@@ -48,9 +47,9 @@ const listData = [
       Math.random() * 10,
       Math.random() * 10,
       Math.random() * 10,
-      Math.random() * 10
-    ]
-  }
+      Math.random() * 10,
+    ],
+  },
 ];
 
 const App = () => {
@@ -68,7 +67,7 @@ const App = () => {
           fontSize: 12,
           marginLeft: 8,
           textAlign: "center",
-          color: item.strokeColor
+          color: item.strokeColor,
         }}
         rightComponent={
           <LineChart
@@ -78,7 +77,7 @@ const App = () => {
             svg={{
               strokeWidth: 1.5,
               fill: item.fillColor,
-              stroke: item.strokeColor
+              stroke: item.strokeColor,
             }}
           />
         }
@@ -107,26 +106,26 @@ const styles = {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: "#F5FCFF",
   },
   welcome: {
     fontSize: 20,
     textAlign: "center",
-    margin: 10
+    margin: 10,
   },
   instructions: {
     textAlign: "center",
     color: "#333333",
-    marginBottom: 5
+    marginBottom: 5,
   },
   chartStyle: {
     height: 100,
-    width: 100
+    width: 100,
   },
   chartContentInset: {
     top: 30,
-    bottom: 30
-  }
+    bottom: 30,
+  },
 };
 
 export default App;
