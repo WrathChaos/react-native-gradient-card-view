@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
-import { SafeAreaView, View, FlatList, StatusBar } from "react-native";
+import { SafeAreaView, View, FlatList, StatusBar, Image } from "react-native";
 import { LineChart } from "react-native-svg-charts";
-import GradientCard from "react-native-gradient-card-view";
+// import GradientCard from "react-native-gradient-card-view";
+import GradientCard from "./build/dist/GradientCard";
 
 const listData = [
   {
@@ -53,34 +54,51 @@ const listData = [
 ];
 
 const App = () => {
-  function renderItem(item) {
+  const renderRightComponent = (
+    data: any,
+    fillColor: string,
+    strokeColor: string
+  ) => (
+    <LineChart
+      data={data}
+      style={styles.chartStyle}
+      contentInset={styles.chartContentInset}
+      svg={{
+        strokeWidth: 1.5,
+        fill: fillColor,
+        stroke: strokeColor,
+      }}
+    />
+  );
+
+  function renderItem(item: any) {
+    const {
+      name,
+      shortName,
+      strokeColor,
+      fillColor,
+      image,
+      value,
+      change,
+      data,
+    } = item;
     return (
       <GradientCard
-        key={item.name}
+        key={name}
+        title={name}
+        centerText={value}
+        imageSource={image}
+        resizeMode="contain"
+        subtitle={shortName}
+        centerSubText={change}
+        rightComponent={renderRightComponent(data, fillColor, strokeColor)}
         style={{ marginTop: 16 }}
-        title={item.name}
-        subtitle={item.shortName}
-        imageSource={item.image}
-        centerTitle={item.value}
-        centerSubtitle={item.change}
         centerSubtitleStyle={{
           fontSize: 12,
           marginLeft: 8,
           textAlign: "center",
-          color: item.strokeColor,
+          color: strokeColor,
         }}
-        rightComponent={
-          <LineChart
-            data={item.data}
-            style={styles.chartStyle}
-            contentInset={styles.chartContentInset}
-            svg={{
-              strokeWidth: 1.5,
-              fill: item.fillColor,
-              stroke: item.strokeColor,
-            }}
-          />
-        }
       />
     );
   }
@@ -92,6 +110,7 @@ const App = () => {
           <View style={{ top: 24 }}>
             <FlatList
               data={listData}
+              keyExtractor={(item) => item.name}
               renderItem={({ item }) => renderItem(item)}
             />
           </View>

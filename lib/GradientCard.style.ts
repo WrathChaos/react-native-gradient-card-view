@@ -3,7 +3,8 @@ import {
   ViewStyle,
   TextStyle,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  ImageStyle,
 } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -19,7 +20,7 @@ interface Style {
   centerSubtitleStyle: TextStyle;
 }
 
-export function _shadowStyle(shadowColor) {
+export function _shadowStyle(shadowColor: string): ViewStyle {
   return {
     ...Platform.select({
       ios: {
@@ -28,29 +29,37 @@ export function _shadowStyle(shadowColor) {
         shadowOpacity: 0.5,
         shadowOffset: {
           width: 1,
-          height: 3
-        }
+          height: 3,
+        },
       },
       android: {
-        elevation: 3
-      }
-    })
+        elevation: 3,
+      },
+    }),
   };
 }
 
-export function _outerContainer(height, width, borderRadius) {
+export function _outerContainer(
+  height: number,
+  width: number,
+  borderRadius: number
+): ViewStyle {
   return {
     width,
     height,
-    borderRadius
+    borderRadius,
   };
 }
 
-export function _imageStyle(width, height, borderRadius) {
+export function _imageStyle(
+  height: number,
+  width: number,
+  borderRadius: number
+): ImageStyle {
   return {
     width,
     height,
-    borderRadius
+    borderRadius,
   };
 }
 
@@ -62,7 +71,7 @@ export default StyleSheet.create<Style>({
     flexDirection: "row",
     alignContent: "center",
     alignSelf: "flex-start",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   column: { flexDirection: "column" },
   titleStyle: {
@@ -70,29 +79,29 @@ export default StyleSheet.create<Style>({
     color: "white",
     marginLeft: 8,
     textAlign: "left",
-    fontWeight: "bold"
+    fontWeight: "bold",
   },
   subtitleStyle: {
     width: 85,
     fontSize: 12,
     marginLeft: 8,
     color: "#E2E2E2",
-    textAlign: "left"
+    textAlign: "left",
   },
   centerTextContainer: {
-    marginLeft: width * 0.01
+    marginLeft: width * 0.01,
   },
   centerTitleStyle: {
     marginLeft: 8,
     color: "white",
     fontWeight: "bold",
-    textAlign: "center"
+    textAlign: "center",
   },
   centerSubtitleStyle: {
     fontSize: 12,
     marginLeft: 8,
     textAlign: "center",
-    color: "rgba(163, 224, 97, 1.0)"
+    color: "rgba(163, 224, 97, 1.0)",
   },
-  rightContainer: { left: 40 }
+  rightContainer: { left: 40 },
 });

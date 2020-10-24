@@ -1,5 +1,14 @@
 import * as React from "react";
-import { Text, View, Image, Dimensions } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+  Dimensions,
+} from "react-native";
 import PropTypes from "prop-types";
 import styles, {
   _shadowStyle,
@@ -8,50 +17,87 @@ import styles, {
 } from "./GradientCard.style";
 import LinearGradient from "react-native-linear-gradient";
 
-const { width } = Dimensions.get("window");
+const { width: ScreenWidth } = Dimensions.get("window");
 
-const GradientCard = (props) => {
+const DEFAULT_GRADIENT_COLOR = [
+  "rgba(85,96,127,1.0)",
+  "rgba(68, 79, 112, 1.0)",
+  "rgba(48, 58, 87,1.0)",
+];
+
+export interface ISource {
+  source: string | { uri: string };
+}
+
+export type CustomStyleProp =
+  | StyleProp<ViewStyle>
+  | Array<StyleProp<ViewStyle>>;
+
+interface IGradientCardProps {
+  title: string;
+  width?: number;
+  height?: number;
+  subtitle: string;
+  centerText?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  shadowColor?: string;
+  borderRadius?: number;
+  centerSubText?: string;
+  imageBorderRadius?: number;
+  imageComponent?: any;
+  rightComponent?: any;
+  ImageComponent?: any;
+  imageSource?: ISource;
+  gradientColors?: Array<string>;
+  imageStyle?: ImageStyle;
+  titleTextStyle?: TextStyle;
+  centerTextStyle?: TextStyle;
+  subtitleTextStyle?: TextStyle;
+  centerSubtextStyle?: TextStyle;
+  style?: CustomStyleProp;
+  outerContainerStyle?: CustomStyleProp;
+  innerContainerStyle?: CustomStyleProp;
+}
+
+const GradientCard = (props: IGradientCardProps) => {
   const {
-    end,
-    start,
     title,
-    width,
     style,
-    height,
     subtitle,
-    imageWidth,
-    imageHeight,
-    shadowColor,
-    titleStyle,
     imageStyle,
-    centerTitle,
-    shadowStyle,
+    centerText,
     imageSource,
-    borderRadius,
-    subtitleStyle,
-    centerSubtitle,
-    outerContainer,
-    innerContainer,
-    gradientColors,
+    centerSubText,
+    titleTextStyle,
     imageComponent,
-    ImageComponent,
     rightComponent,
-    imageResizeMode,
-    centerTitleStyle,
-    imageBorderRadius,
-    centerSubtitleStyle,
+    centerTextStyle,
+    subtitleTextStyle,
+    centerSubtextStyle,
+    outerContainerStyle,
+    innerContainerStyle,
+    height = 70,
+    imageWidth = 35,
+    imageHeight = 35,
+    borderRadius = 20,
+    ImageComponent = Image,
+    imageBorderRadius = 10,
+    shadowColor = "#595959",
+    width = ScreenWidth * 0.95,
+    gradientColors = DEFAULT_GRADIENT_COLOR,
   } = props;
 
   const renderImage = () => {
     return (
       imageComponent || (
         <ImageComponent
+          {...props}
           source={imageSource}
-          resizeMode={imageResizeMode}
-          style={
-            imageStyle ||
-            _imageStyle(imageWidth, imageHeight, imageBorderRadius)
-          }
+          style={[
+            _imageStyle(imageHeight, imageWidth, imageBorderRadius),
+            imageStyle,
+          ]}
         />
       )
     );
@@ -60,20 +106,22 @@ const GradientCard = (props) => {
   const renderTitles = () => {
     return (
       <View style={styles.column}>
-        <Text style={titleStyle || styles.titleStyle}>{title}</Text>
-        <Text style={subtitleStyle || styles.subtitleStyle}>{subtitle}</Text>
+        <Text style={[styles.titleStyle, titleTextStyle]}>{title}</Text>
+        <Text style={[styles.subtitleStyle, subtitleTextStyle]}>
+          {subtitle}
+        </Text>
       </View>
     );
   };
 
-  const renderCenterTitle = () => {
+  const renderCenterComponent = () => {
     return (
       <View style={[styles.column, styles.centerTextContainer]}>
-        <Text style={centerTitleStyle || styles.centerTitleStyle}>
-          {centerTitle}
+        <Text style={[styles.centerTitleStyle, centerTextStyle]}>
+          {centerText}
         </Text>
-        <Text style={centerSubtitleStyle || styles.centerSubtitleStyle}>
-          {centerSubtitle}
+        <Text style={[styles.centerSubtitleStyle, centerSubtextStyle]}>
+          {centerSubText}
         </Text>
       </View>
     );
@@ -88,60 +136,26 @@ const GradientCard = (props) => {
   };
 
   return (
-    <View style={[style, shadowStyle || _shadowStyle(shadowColor)]}>
+    <View style={[_shadowStyle(shadowColor), style]}>
       <LinearGradient
-        end={end}
-        start={start}
+        end={{ x: 1, y: 0 }}
+        start={{ x: 0, y: 0 }}
         colors={gradientColors}
-        style={outerContainer || _outerContainer(height, width, borderRadius)}
+        {...props}
+        style={[
+          _outerContainer(height, width, borderRadius),
+          outerContainerStyle,
+        ]}
       >
-        <View style={innerContainer || styles.innerContainer}>
+        <View style={[styles.innerContainer, innerContainerStyle]}>
           {renderImage()}
           {renderTitles()}
-          {renderCenterTitle()}
+          {renderCenterComponent()}
           {renderRightComponent()}
         </View>
       </LinearGradient>
     </View>
   );
-};
-
-GradientCard.propTypes = {
-  end: PropTypes.object,
-  start: PropTypes.object,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  shadowColor: PropTypes.string,
-  centerTitle: PropTypes.string,
-  borderRadius: PropTypes.number,
-  gradientColors: PropTypes.array,
-  centerSubtitle: PropTypes.string,
-  imageResizeMode: PropTypes.string,
-  imageBorderRadius: PropTypes.number,
-};
-
-GradientCard.defaultProps = {
-  height: 70,
-  title: "BCT",
-  imageWidth: 35,
-  imageHeight: 35,
-  borderRadius: 20,
-  end: { x: 1, y: 0 },
-  subtitle: "Bitcoin",
-  width: width * 0.95,
-  rightComponent: null,
-  ImageComponent: Image,
-  start: { x: 0, y: 0 },
-  imageBorderRadius: 10,
-  shadowColor: "#595959",
-  centerTitle: "$ 4081,95",
-  centerSubtitle: "+ 1,48 ↑",
-  imageResizeMode: "contain",
-  gradientColors: [
-    "rgba(85,96,127,1.0)",
-    "rgba(68, 79, 112, 1.0)",
-    "rgba(48, 58, 87,1.0)",
-  ],
 };
 
 export default GradientCard;
