@@ -9,7 +9,6 @@ import {
   ImageStyle,
   Dimensions,
 } from "react-native";
-import PropTypes from "prop-types";
 import styles, {
   _shadowStyle,
   _imageStyle,
