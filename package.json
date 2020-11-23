@@ -41,7 +41,7 @@
     "react-native-linear-gradient": ">= 2.x.x"
   },
   "devDependencies": {
-    "@types/react": "^16.9.17",
+    "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.30",
     "react-native-typescript-transformer": "^1.2.13",
     "typescript": "^4.0.3"
