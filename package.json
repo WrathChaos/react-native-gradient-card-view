@@ -29,8 +29,8 @@
     "publish": "npm publish --access public && echo Package published!"
   },
   "dependencies": {
-    "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react": "17.0.1",
+    "react-native": "0.64.0",
     "react-native-svg": ">= 9.x.x",
     "react-native-linear-gradient": "^2.5.6"
   },
