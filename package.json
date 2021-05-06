@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "react": "17.0.1",
-    "react-native": "0.64.0",
+    "react-native": "0.64.1",
     "react-native-svg": ">= 9.x.x",
     "react-native-linear-gradient": "^2.5.6"
   },
